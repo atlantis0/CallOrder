@@ -23,7 +23,7 @@ Hence, I have to write timestamp information into a file (log.txt). We can inspe
 
 Methodology
 ===========
-**Prepare a function that logs timestamp and class/method name of the caller to ADB logcat. Hence, there won't be anything shown in the app UI.** Call this function from different application components 
+**Prepare a function that logs timestamp and class/method name of the caller to ADB logcat. Hence, there won't be anything shown in the app UI/UX.** Call this function from different application components 
 (Activity, Content provider, Application class, etc). This allows us to compare which of the functions was called first
 
 So, in summary here is the timeline of events. i.e the order of function calls
