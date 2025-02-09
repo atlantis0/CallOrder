@@ -27,7 +27,10 @@ import java.util.Objects;
  *
  */
 public class BootAwareReceiver extends BroadcastReceiver {
+
     private static final String TAG = BootAwareReceiver.class.getSimpleName();
+    private static final String LOCKED_BOOT_COMPLETED = "android.intent.action.LOCKED_BOOT_COMPLETED";
+    private static final String BOOT_COMPLETED = "android.intent.action.BOOT_COMPLETED";
 
     public BootAwareReceiver() {
         Function.Call("BootAwareReceiver Constructor");
@@ -35,7 +38,8 @@ public class BootAwareReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context appContext, Intent intent) {
-        if(Objects.equals(intent.getAction(), "android.intent.action.LOCKED_BOOT_COMPLETED")) {
+        Function.Call(this.getClass(), intent.getAction());
+        if(Objects.equals(intent.getAction(), LOCKED_BOOT_COMPLETED)) {
             Function.Call(this.getClass(), "LOCKED_BOOT_COMPLETED onReceive");
             Context directBootContext = appContext.createDeviceProtectedStorageContext();
             try {
@@ -45,6 +49,8 @@ public class BootAwareReceiver extends BroadcastReceiver {
             } catch (IOException e) {
                 Log.e(TAG, e.toString());
             }
+        } else if(Objects.equals(intent.getAction(), BOOT_COMPLETED)) {
+            Function.Call(this.getClass(), "BOOT_COMPLETED onReceive");
         }
     }
 }
