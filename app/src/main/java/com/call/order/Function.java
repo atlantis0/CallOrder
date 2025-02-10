@@ -18,6 +18,6 @@ public class Function {
     }
 
     public static void Call(String functionName) {
-        Log.d(TAG, functionName + " ==> " + System.nanoTime());
+        Log.d(TAG, String.format("[%d] %s", System.nanoTime(), functionName));
     }
 }
