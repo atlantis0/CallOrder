@@ -18,7 +18,9 @@ import java.util.Objects;
  */
 public class App extends Application {
 
-    private static final String TAG = App.class.getSimpleName();
+    static {
+        System.loadLibrary("launch");
+    }
 
     public App() {
         Function.Call(this.getClass(), "Constructor");
