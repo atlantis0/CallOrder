@@ -37,12 +37,13 @@ Case -1
 ![Timeline](timeline.png)
 
 Case-2
-1. BootAwareReceiver constructor
-2. BootAwareReceiver onReceive method
-3. Application class constructor
+1. Application class constructor
+2. Application class onCreate 
+3. BootAwareReceiver constructor
+4. BootAwareReceiver onReceive method
 
-Alternative Method
-==================
+2nd Solution (See native_call branch)
+================================
 
 There is also the option of declaring a native function that can be executed whenever its loaded for the very first time. This can be achieved by loading the native library statically in the Application's class. See below
 
@@ -51,5 +52,7 @@ There is also the option of declaring a native function that can be executed whe
 Then proceed to write this function in C 
 
 ![Native JNI Load](native_jni_load_call.png)
+
+![Native Call Order](native_first.png)
 
  
