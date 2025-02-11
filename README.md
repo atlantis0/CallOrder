@@ -5,8 +5,10 @@ There is the option of declaring a native function that can be executed whenever
 
 ![Native Load](native_load.png)
 
-Then proceed to write this function in C 
+Then proceed to write this function in C
 
 ![Native JNI Load](native_jni_load_call.png)
+
+![Native Call Order](native_first.png)
 
  
